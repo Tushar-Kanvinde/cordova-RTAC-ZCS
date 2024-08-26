@@ -18,6 +18,7 @@ import com.zcs.sdk.print.PrnTextFont;
 import com.zcs.sdk.print.PrnTextStyle;
 import java.io.IOException;
 import java.io.InputStream;
+import com.zcs.sdk.Sys;
 
 public class Trend {
 
@@ -28,7 +29,7 @@ public class Trend {
 
     public Trend(Activity callingActivity) {
         mActivity = callingActivity;
-        mDriverManager = new DriverManager(mActivity);
+        mDriverManager = DriverManager.getInstance();
        
     }
 
@@ -61,7 +62,6 @@ public class Trend {
                     Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
                     if (bitmap == null) {
                         Log.e("PrintTrend", "Bitmap is null");
-                        return false;
                     }
 
                     mPrinter.setPrintAppendBitmap(bitmap, Layout.Alignment.ALIGN_CENTER);
@@ -69,7 +69,6 @@ public class Trend {
                 }
 
             }catch (Exception e){
-                editText.setText("printStatus exr-"+e);
                 Log.e("Exception", String.valueOf(e));
             }
         }
