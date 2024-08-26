@@ -75,7 +75,6 @@ public class Trend {
     
     }
 
-    @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         // Setup preferences if needed
     }
