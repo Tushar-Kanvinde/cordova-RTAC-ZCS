@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-RTAC-ZCS"
+        version="0.1.0-dev">
+
+   <name>RTAC</name>
+   <description>A cordova plugin for utilities for RTAC for android platform.</description>
+
+   <repo>https://github.com/Tushar-Kanvinde/cordova-RTAC-ZCS.git</repo>
+   <license>Apache 2.0</license>
+   <keywords>Cordova, RTAC Utilities</keywords>
+
+   <author>Tushar Kanvinde</author>
+
+   <!-- cordova -->
+   <engines>
+      <engine name="cordova" version=">=11.0.0" />
+   </engines>
+
+   <js-module src="www/RTACTrend.js" name="RTACTrend">
+      <clobbers target="RTACTrend" />
+   </js-module>
+
+   <!-- android -->
+   <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+         <feature name="RTACTrend">
+            <param name="android-package" value="in.rtac.RTACTrend.RTACTrend"/>
+         </feature>
+         <feature name="Trend">
+            <param name="android-package" value="in.rtac.Trend.Trend"/>
+         </feature>
+      </config-file>
+      <framework src="androidx.appcompat:appcompat:1.6.1" />     
+      <source-file src="src/android/RTACTrend.java" target-dir="src/in/rtac/RTACTrend" />
+      <source-file src="src/android/Trend.java" target-dir="src/in/rtac/Trend" />
+      <source-file src="libs/SmartPos_1.7.0_R230208.jar" target-dir="libs"/>
+   </platform>
+</plugin>
