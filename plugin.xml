@@ -4,7 +4,7 @@
         id="cordova-RTAC-ZCS"
         version="0.1.0-dev">
 
-   <name>RTAC</name>
+   <name>RTAC-ZCS</name>
    <description>A cordova plugin for utilities for RTAC for android platform.</description>
 
    <repo>https://github.com/Tushar-Kanvinde/cordova-RTAC-ZCS.git</repo>
@@ -36,5 +36,7 @@
       <source-file src="src/android/RTACTrend.java" target-dir="src/in/rtac/RTACTrend" />
       <source-file src="src/android/Trend.java" target-dir="src/in/rtac/Trend" />
       <source-file src="libs/SmartPos_1.7.0_R230208.jar" target-dir="libs"/>
+      <source-file src="src/main/jniLibs/arm64-v8a/libSmartPosJni.so" target-dir="src/main/jniLibs/arm64-v8a"/>
+      <source-file src="src/main/jniLibs/armeabi-v7a/libSmartPosJni.so" target-dir="src/main/jniLibs/armeabi-v7a"/>
    </platform>
 </plugin>
